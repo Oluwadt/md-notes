@@ -2,6 +2,7 @@ import Markdown from "markdown-to-jsx"
 import TopNav from "./TopNav"
 
 const MDX = (props) => {
+    const {text} = props
     const md = 
     `# Header 1
 ## Header 2
@@ -13,7 +14,7 @@ Hello World
     <section className="mdx-container">
       <TopNav {...props} />
       <article>
-        <Markdown>{md}</Markdown>
+        <Markdown>{text.trim()}</Markdown>
       </article>
     </section>
   )
