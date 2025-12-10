@@ -1,7 +1,9 @@
 const SideNav = (props) => {
-  const notes = []//['hello', 'world', 'nice', 'to', 'meet', 'you']
+  const notes = ['hello jkkkjjjjjjjj', 'world', 'nice', 'to', 'meet', 'you', 'world', 'nice', 'to', 'meet', 'you', 'world', 'nice', 'to', 'meet', 'you']
+    const showNav = false
+
   return (
-    <section className={"nav"}>
+    <section className={"nav " + (showNav ? "" : "hidden-nav")}>
         <h1 className="text-gradient">MDNOTES</h1>
         <h6>Easy Notes</h6>
         <div className="full-line"></div>
@@ -14,10 +16,12 @@ const SideNav = (props) => {
           <p>No notes yet...</p> : 
           notes.map((note, idx) => {
             return (
-              <button key={idx} className="card-button-secondary">
+              <button key={idx} className="card-button-secondary list-btn">
                 <p>{note}</p>
                 <small>DATETIME</small>
-                <i className="fa-solid fa-trash"></i>
+                <div className="delete-btn">
+                    <i className="fa-solid fa-trash-can"></i>
+                </div>
               </button>
             )            
           })}
